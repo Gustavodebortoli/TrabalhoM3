@@ -4,20 +4,20 @@
 using namespace std;
 
 int main() {
-    // ----- Limites do sistema (definidos como constantes) -----
+    // Valores constantes (fixos)
     const int MAX_VEICULOS = 20;
-    const int MAX_SERVICOS = 10;      // qtd maxima de servicos por veiculo
-    const int KM_INTERVALO_REVISAO = 10000; // intervalo recomendado p/ revisao
+    const int MAX_SERVICOS = 10;      
+    const int KM_INTERVALO_REVISAO = 10000;
 
-    // ----- Vetores: um veiculo por posicao -----
+    // Vetores usados 
     string placa[MAX_VEICULOS];
     string proprietario[MAX_VEICULOS];
     string modelo[MAX_VEICULOS];
     int kmAtual[MAX_VEICULOS];
-    int qtdServicos[MAX_VEICULOS]; // quantos servicos cada veiculo ja tem
+    int qtdServicos[MAX_VEICULOS]; 
     int totalVeiculos = 0;
 
-    // ----- Matrizes: linha = veiculo, coluna = servico daquele veiculo -----
+    // Matrizes usadas
     string tipoServico[MAX_VEICULOS][MAX_SERVICOS];
     float custoServico[MAX_VEICULOS][MAX_SERVICOS];
     int kmServico[MAX_VEICULOS][MAX_SERVICOS];
@@ -40,7 +40,7 @@ int main() {
         cout << "Escolha uma opcao: ";
         cin >> opcao;
 
-        // ===================== 1) CADASTRAR VEICULO =====================
+        // Cadastro de veiculo
         if (opcao == 1) {
             if (totalVeiculos >= MAX_VEICULOS) {
                 cout << "Limite de veiculos cadastrados atingido.\n";
@@ -63,7 +63,7 @@ int main() {
             }
         }
 
-        // ================ 2) REGISTRAR SERVICO DE MANUTENCAO ================
+        // Registrar servico de manutencao
         else if (opcao == 2) {
             if (totalVeiculos == 0) {
                 cout << "Nenhum veiculo cadastrado ainda.\n";
@@ -100,7 +100,7 @@ int main() {
             }
         }
 
-        // ================ 3) CONSULTAR HISTORICO DE UM VEICULO ================
+        // Consultar historico de um veiculo
         else if (opcao == 3) {
             if (totalVeiculos == 0) {
                 cout << "Nenhum veiculo cadastrado ainda.\n";
@@ -134,7 +134,7 @@ int main() {
             }
         }
 
-        // ========== 4) RELATORIO: GASTO TOTAL POR VEICULO E MAIOR GASTO ==========
+        // Relatorio: gasto total por veiculo e maior gasto
         else if (opcao == 4) {
             if (totalVeiculos == 0) {
                 cout << "Nenhum veiculo cadastrado ainda.\n";
@@ -167,7 +167,7 @@ int main() {
             }
         }
 
-        // ============== 5) ALERTA DE REVISAO PREVENTIVA ==============
+        // Verificar alerta de revisao preventiva
         else if (opcao == 5) {
             if (totalVeiculos == 0) {
                 cout << "Nenhum veiculo cadastrado ainda.\n";
@@ -200,7 +200,7 @@ int main() {
             }
         }
 
-        // ================ 6) LISTAR TODOS OS VEICULOS ================
+        // Listar todos os veiculos cadastrados
         else if (opcao == 6) {
             if (totalVeiculos == 0) {
                 cout << "Nenhum veiculo cadastrado ainda.\n";
